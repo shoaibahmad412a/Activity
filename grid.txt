@@ -1,0 +1,86 @@
+Discord Message 1 — Problem & Motivation
+
+Power systems today do not have any standardized framework for using LLMs.
+All existing grid tools are numerical and engineering-focused, while LLMs require structured, interpretable text to reason effectively.
+
+Unlike healthcare (which has FHIR + MedPrompt), the power domain lacks:
+
+Prompt templates
+
+Structured-to-text converters
+
+RAG-based retrieval for grid logs
+
+LLM-friendly interpretation pipelines
+
+This means the industry cannot use LLMs reliably for loadflow interpretation, fault diagnosis, or SCADA anomaly reasoning.
+
+Our goal:
+Create the first domain-adaptive LLM prompt engineering framework for power systems.
+
+💬 Discord Message 2 — Introducing PowerPrompt
+
+We propose PowerPrompt, the first prompt-builder architecture designed specifically for power grids.
+It is inspired by MedPrompt, but adapted to engineering workflows.
+
+PowerPrompt includes:
+
+PowerGrid2Text → Converts structured grid data into clear natural language
+
+Embedding + Vector Database → Stores historical grid faults & SCADA events
+
+Domain-specific prompt templates → Voltage analysis, overload detection, loadflow explanation
+
+LLM decision support agent → Answers grid operator questions
+
+This framework makes LLMs actually usable for operational grid reasoning.
+
+💬 Discord Message 3 — Dataset & Experiments
+
+For testing the framework, we use the IEEE 14-Bus system, plus synthetic SCADA measurements and synthetic fault logs.
+
+We evaluate three core functionalities:
+
+1️⃣ PowerGrid2Text Accuracy & Clarity
+Converts numerical grid snapshots into LLM-ready descriptive text.
+
+2️⃣ RAG Fault Retrieval
+Retrieves similar past faults from a vector database (Chroma/Redis) using embeddings.
+
+3️⃣ LLM-Based Loadflow Interpretation
+LLM interprets voltage violations, overloads, low frequencies, etc., based on the structured-text representation.
+
+These tests demonstrate whether LLMs can reason meaningfully about grid conditions.
+
+💬 Discord Message 4 — Key Results
+
+🚀 Result 1 — A Working PowerGrid2Text Module
+Grid data is transformed into consistent natural language, improving interpretability.
+
+🚀 Result 2 — Better LLM Reasoning
+LLMs make more accurate engineering observations when fed structured text (vs raw numbers).
+They correctly identify weak buses, overloaded lines, and abnormal SCADA states.
+
+🚀 Result 3 — Functional RAG Fault Diagnosis
+LLMs retrieve relevant historical fault patterns, producing clearer explanations and more reliable diagnoses.
+
+Overall:
+Structured template + text conversion + RAG dramatically improves LLM performance in power engineering tasks.
+
+💬 Discord Message 5 — Final Conclusions
+
+PowerPrompt introduces a completely new way to use LLMs for power system operations.
+
+Our conclusions:
+
+We introduce the first standardized LLM prompt framework for power systems.
+
+We develop PowerGrid2Text, similar to FHIR2Text but for engineering data.
+
+We demonstrate that LLMs reason better with structured, domain-specific text.
+
+RAG enables reliable retrieval of historical grid faults for improved diagnosis.
+
+The system is modular and can work with SCADA, CIM, loadflow models, and operator logs.
+
+This work shows that LLMs can support real grid decision-making if the right prompt-engineering framework is applied.
