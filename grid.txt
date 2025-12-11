@@ -1,3 +1,7 @@
+
+The RAG pipeline does not perform anomaly detection; rather, it enhances situational awareness by retrieving semantically similar historical events. This provides context that allows the LLM to generate more accurate and interpretable diagnostics for grid operators.
+
+
 Discord Message 1 — Problem & Motivation
 
 Power systems today do not have any standardized framework for using LLMs.
